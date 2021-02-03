@@ -1,0 +1,45 @@
+<div class="container">
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-div" >
+  <h1 class="form-head">Add New Flash Card</h1>
+  
+  <div class="form-input-div">
+  <label class="" >Question</label>
+  <input type="text"  formControlName="question">
+  <ng-container *ngFor="let error of error_messages.question">
+    <div class="error-message" *ngIf="
+          form.get('question').hasError(error.type) &&
+          (form.get('question').dirty ||form.get('question').touched)">
+        {{ error.message }}
+    </div>
+  </ng-container>
+ 
+  </div> 
+  
+  <div class="form-input-div">
+  <label >Answer</label> 
+  <input type="text" formControlName="answer">
+  <ng-container *ngFor="let error of error_messages.answer">
+    <div class="error-message" *ngIf="
+          form.get('answer').hasError(error.type) &&
+          (form.get('answer').dirty ||form.get('answer').touched)">
+        {{ error.message }}
+    </div>
+</ng-container>
+  </div>
+
+  <div class="btn">
+  <button class="btn1" mat-button>Submit</button>
+  <button class="btn2" mat-button (click)="clear()">Clear</button>
+  </div>
+
+</form>
+
+<div *ngFor="let arr of array">
+<mat-card class="text-center">{{arr.question}}</mat-card>
+
+<mat-card>{{arr.answer}}</mat-card>
+</div>
+
+<!-- <mat-car></mat-car> -->
+
+</div>

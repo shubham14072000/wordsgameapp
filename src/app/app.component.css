@@ -1,0 +1,48 @@
+
+/* form{
+    display: flex;
+    flex-direction: column;
+} */
+.form-div{
+    margin: 10px 500px;
+}
+.form-head{
+    margin: 20px;
+    text-align: center;
+}
+
+.form-input-div{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-div label{
+    font-weight: 600;
+    margin: 5px;
+}
+.form-input-div input{
+    height:25px;
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    text-align: left;
+}
+.btn{
+    display: flex;
+    margin: 10px 0px;
+}
+
+.btn button{
+    margin: 5px;
+}
+
+.btn1{
+    background-color: cyan;
+    color: white;
+}
+.btn2{
+    color: black;
+    border: 1px solid black;
+}
