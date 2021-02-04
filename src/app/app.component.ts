@@ -10,10 +10,13 @@ import {FormGroup,FormControl,Validators,FormArray,FormBuilder} from '@angular/f
 export class AppComponent implements OnInit {
   title = 'wordsgameapp';
   // form:FormGroup;
-  
+  flagdropdown=false;
+  indexdropdown=-1;
+
+
   constructor( private fb: FormBuilder){}
 array=[];
-form=new FormGroup({
+ form=new FormGroup({
   question:new FormControl(''),
   answer:new FormControl('')
 })
@@ -39,11 +42,15 @@ clear(){
 onSubmit(){
 
  if(this.form.valid){
-  console.log(this.form.value);
+  // console.log(this.form.value);
 
   // this.array1.push(this.form.value.question);
-  
-  this.array.push(this.form.value);
+  const obj={
+    question:this.form.value.question,
+    answer:this.form.value.answer,
+    status:0
+  }
+  this.array.push(obj);
   
   console.log(this.array);
   
@@ -60,4 +67,31 @@ onSubmit(){
 }
 
 }
+
+ondropdown(i){
+  this.indexdropdown=i;
+  this.flagdropdown= !this.flagdropdown;
 }
+oncorrect(i){
+  this.array[i].status=1;
+
+}
+onwrong(i){
+  this.array[i].status=2;
+
+}
+
+onedit(i){
+  // this.form=this.array[i];
+// this.form.setValue({
+//   question:this.array[i].question,
+//   answer:this.array[i].answer
+// })
+}
+ondelete(index){
+  this.array.splice(index,1);
+}
+}
+
+
+

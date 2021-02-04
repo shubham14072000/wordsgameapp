@@ -46,3 +46,47 @@
     color: black;
     border: 1px solid black;
 }
+
+.card-display{
+    display: inline-block;
+    width: 400px;
+    margin: 24px;
+}
+
+.head{
+    height: 25px;
+}
+.active{
+    background-color: green;
+}
+.deactive{
+    background-color: red;
+}
+.head img{
+    width: 30px;
+    height: 30px;
+    margin-left: 260px;
+}
+.choice-icons{
+    display: flex;
+}
+.choice-icons img{
+    width: 30px;
+    height: 30px;
+}
+.correct-icon{
+    margin-top: 50px  ;
+    margin-right: 70px;   
+}
+.wrong-icon{
+    margin-top: auto;
+    margin-right: 80px;
+}
+.edit-icon{
+    margin-top: auto;
+    margin-right: 30px;
+}
+.delete-icon{
+    margin-top: auto;
+    margin-left: 40px;
+}

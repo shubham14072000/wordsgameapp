@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "wordsgameapp"
+  "defaultProject": "wordsgameapp",
+  "cli": {
+    "analytics": false
+  }
 }

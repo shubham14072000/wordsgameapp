@@ -34,12 +34,20 @@
 
 </form>
 
-<div *ngFor="let arr of array">
-<mat-card class="text-center">{{arr.question}}</mat-card>
+<div class="card-display" *ngFor="let arr of array; let i =index">
 
-<mat-card>{{arr.answer}}</mat-card>
+<mat-card class="head" [class.active]="arr.status === 1" [class.deactive]="arr.status === 2" >{{arr.question}} <img  (click)="ondropdown(i)" src="./../assets/dropdownicon.png" alt=""></mat-card>
+<mat-card class="content" *ngIf="flagdropdown && indexdropdown ==i">{{arr.answer}}
+<div class="choice-icons" >
+ <img class="correct-icon" (click)="oncorrect(i)" src="./../assets/tick.png" alt="">
+ <img class="wrong-icon"(click)="onwrong(i)" src="./../assets/wrong.png" alt="">
+ <img class="edit-icon" (click)="onedit(i)" src="./../assets/editicon.png" alt="">
+ <img class="delete-icon" (click)="ondelete(i)"  src="./../assets/delete.png" alt="">
+</div>
+</mat-card>
+
 </div>
 
-<!-- <mat-car></mat-car> -->
+ 
 
 </div>
